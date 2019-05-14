@@ -1,0 +1,5 @@
+@mixin color($clr-1, $clr-2, $clr-3) {
+    border-color: $clr-1;
+    background: $clr-2;
+    color: $clr-3;
+}

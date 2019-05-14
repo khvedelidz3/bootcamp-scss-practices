@@ -1,0 +1,181 @@
+@import 'color';
+
+.alert {
+    display: flex;
+    position: relative;
+    height: 150px;
+    padding-top: 42px;
+    padding-left: 50px;
+    border: 1px solid $color-1;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
+
+    &::before {
+        content: '';
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin-right: 28px;
+        border: 7px solid $color-3;
+        border-radius: 50%;
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 24px;
+        line-height: 26px;
+    }
+
+    &.alert {
+
+        &-warning::before {
+            content: '\f12a';
+
+            @include color($color-6, $color-5, $color-4);
+        }
+
+        &-success::before {
+            content: '\f00c';
+
+            @include color($color-10, $color-9, $color-8);
+        }
+
+        &-danger::before {
+            content: '\f00d';
+
+            @include color($color-13, $color-12, $color-11);
+        }
+
+        &-flash::before {
+            content: '\f0e7';
+
+            @include color($color-16, $color-15, $color-14);
+        }
+
+        &-info::before {
+            content: '\f129';
+
+            @include color($color-19, $color-18, $color-17);
+        }
+    }
+
+    div {
+
+        h3 {
+            padding-bottom: 14px;
+            color: $color-2;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 1.4px;
+            line-height: 10px;
+        }
+
+        p {
+            color: $color-3;
+            font-size: 14px;
+            line-height: 24px;
+        }
+    }
+
+    a {
+        position: absolute;
+        top: 17.6px;
+        right: 18.9px;
+        width: 11px;
+        height: 14px;
+    }
+
+    a::after {
+        content: '\f00d';
+        display: inline-block;
+        position: absolute;
+        top: -6px;
+        color: $color-7;
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+    }
+
+    &.solid {
+
+        &.alert-warning {
+            background: $color-5;
+
+            &::before {
+                @include color($color-20, $color-5, $color-4);
+            }
+
+            p {
+                color: $color-2;
+            }
+
+            a::after {
+                color: $color-21;
+            }
+        }
+
+        &.alert-success {
+            background: $color-22;
+
+            &::before {
+                @include color($color-10, $color-22, $color-8);
+            }
+
+            p {
+                color: $color-2;
+            }
+
+            a::after {
+                color: $color-8;
+            }
+        }
+
+        &.alert-danger {
+            background: $color-23;
+
+            &::before {
+                @include color($color-13, $color-23, $color-11);
+            }
+
+            p {
+                color: $color-2;
+            }
+
+            a::after {
+                color: $color-11;
+            }
+        }
+
+        &.alert-flash {
+            background: $color-24;
+
+            &::before {
+                @include color($color-16, $color-24, $color-14);
+            }
+
+            p {
+                color: $color-2;
+            }
+
+            a::after {
+                color: $color-14;
+            }
+        }
+
+        &.alert-info {
+            background: $color-25;
+
+            &::before {
+                @include color($color-19, $color-25, $color-17);
+            }
+
+            p {
+                color: $color-2;
+            }
+
+            a::after {
+                color: $color-17;
+            }
+        }
+    }
+}
