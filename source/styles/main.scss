@@ -25,236 +25,222 @@ $color-24: #85EBFA;
 $color-25: #AACDF6;
 
 * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
 body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
 }
 
-.container{
-  width: 1171px;
-  margin: auto;
+.container {
+    width: 1171px;
+    margin: auto;
 }
 
-.flex{
-  display: flex;
-  justify-content: space-between;
-  margin-bottom: 30px;
+.flex {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
 }
 
-.wrapper{
-  width: 570px;
+.wrapper {
+    width: 570px;
 }
 
 .alert {
-  position: relative;
-  height: 150px;
-  border: 1px solid $color-1;
-  border-radius: 10px;
-  font-family: 'Lato';
-  display: flex;
-  padding-top: 42px;
-  padding-left: 50px;
-
-  &:before {
-    content: '';
-    font-family: "FontAwesome";
-    font-size: 24px;
-    line-height: 26px;
-    width: 50px;
-    height: 50px;
-    border: 7px solid $color-3;
-    border-radius: 50%;
     display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-shrink: 0;
-    margin-right: 28px;
-  }
+    position: relative;
+    height: 150px;
+    padding-top: 42px;
+    padding-left: 50px;
+    border: 1px solid $color-1;
+    border-radius: 10px;
+    font-family: 'Lato', sans-serif;
 
-  &.alert {
-    &-warning:before {
-      content: '\f12a';
-      width: 50px;
-      height: 50px;
-      color: $color-4;
-      background: $color-5;
-      border-color: $color-6;
+    &::before {
+        content: '';
+        display: flex;
+        flex-shrink: 0;
+        align-items: center;
+        justify-content: center;
+        width: 50px;
+        height: 50px;
+        margin-right: 28px;
+        border: 7px solid $color-3;
+        border-radius: 50%;
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 24px;
+        line-height: 26px;
     }
 
-    &-success:before {
-      content: '\f00c';
-      width: 50px;
-      height: 50px;
-      color: $color-8;
-      background: $color-9;
-      border-color: $color-10;
+    &.alert {
+
+        &-warning::before {
+            content: '\f12a';
+            border-color: $color-6;
+            background: $color-5;
+            color: $color-4;
+        }
+
+        &-success::before {
+            content: '\f00c';
+            border-color: $color-10;
+            background: $color-9;
+            color: $color-8;
+        }
+
+        &-danger::before {
+            content: '\f00d';
+            border-color: $color-13;
+            background: $color-12;
+            color: $color-11;
+        }
+
+        &-flash::before {
+            content: '\f0e7';
+            border-color: $color-16;
+            background: $color-15;
+            color: $color-14;
+        }
+
+        &-info::before {
+            content: '\f129';
+            border-color: $color-19;
+            background: $color-18;
+            color: $color-17;
+        }
     }
 
-    &-danger:before {
-      content: '\f00d';
-      width: 50px;
-      height: 50px;
-      color: $color-11;
-      background: $color-12;
-      border-color: $color-13;
-    }
-
-    &-flash:before {
-      content: '\f0e7';
-      width: 50px;
-      height: 50px;
-      color: $color-14;
-      background: $color-15;
-      border-color: $color-16;
-    }
-
-    &-info:before {
-      content: '\f129';
-      width: 50px;
-      height: 50px;
-      color: $color-17;
-      background: $color-18;
-      border-color: $color-19;
-    }
-
-  }
-
-  div {
-    h3 {
-      font-size: 14px;
-      font-weight: 900;
-      color: $color-2;
-      padding-bottom: 14px;
-      letter-spacing: 1.4px;
-      line-height: 10px;
-    }
-
-    p {
-      font-size: 14px;
-      line-height: 24px;
-      color: $color-3;
-    }
-  }
-
-  &-info {
     div {
-      
+
+        h3 {
+            padding-bottom: 14px;
+            color: $color-2;
+            font-size: 14px;
+            font-weight: 900;
+            letter-spacing: 1.4px;
+            line-height: 10px;
+        }
+
+        p {
+            color: $color-3;
+            font-size: 14px;
+            line-height: 24px;
+        }
     }
-  }
 
-  a {
-    position: absolute;
-    width: 11px;
-    height: 14px;
-    top: 17.6px;
-    right: 18.9px;
-  }
+    a {
+        position: absolute;
+        top: 17.6px;
+        right: 18.9px;
+        width: 11px;
+        height: 14px;
+    }
 
-  a::after {
-    content: '\f00d';
-    display: inline-block;
-    position: absolute;
-    font-family: "FontAwesome";
-    font-size: 14px;
-    line-height: 24px;
-    color: $color-7;
-    top: -6px;
-  }
+    a::after {
+        content: '\f00d';
+        display: inline-block;
+        position: absolute;
+        top: -6px;
+        color: $color-7;
+        font-family: 'FontAwesome', sans-serif;
+        font-size: 14px;
+        line-height: 24px;
+    }
 
-  &.solid {
-    &.alert-warning {
-        background: $color-5;
+    &.solid {
 
-        &:before {
-          color: $color-4;
-          background: $color-5;
-          border-color: $color-20;
+        &.alert-warning {
+            background: $color-5;
+
+            &::before {
+                border-color: $color-20;
+                background: $color-5;
+                color: $color-4;
+            }
+
+            p {
+                color: $color-2;
+            }
+
+            a::after {
+                color: $color-21;
+            }
         }
 
-        p {
-          color: $color-2;
+        &.alert-success {
+            background: $color-22;
+
+            &::before {
+                border-color: $color-10;
+                background: $color-22;
+                color: $color-8;
+            }
+
+            p {
+                color: $color-2;
+            }
+
+            a::after {
+                color: $color-8;
+            }
         }
 
-        a::after {
-          color: $color-21;
-        }
-      }
-    
-    &.alert-success{
-        background: $color-22;
+        &.alert-danger {
+            background: $color-23;
 
-        &:before {
-          color: $color-8;
-          background: $color-22;
-          border-color: $color-10;
-        }
+            &::before {
+                border-color: $color-13;
+                background: $color-23;
+                color: $color-11;
+            }
 
-        p {
-          color: $color-2;
-        }
+            p {
+                color: $color-2;
+            }
 
-        a::after {
-          color: $color-8;
-        }
-      }
-    
-    &.alert-danger{
-        background: $color-23;
-
-        &:before {
-          color: $color-11;
-          background: $color-23;
-          border-color: $color-13;
+            a::after {
+                color: $color-11;
+            }
         }
 
-        p {
-          color: $color-2;
+        &.alert-flash {
+            background: $color-24;
+
+            &::before {
+                border-color: $color-16;
+                background: $color-24;
+                color: $color-14;
+            }
+
+            p {
+                color: $color-2;
+            }
+
+            a::after {
+                color: $color-14;
+            }
         }
 
-        a::after {
-          color: $color-11;
-        }
-      }
-    
-    &.alert-flash{
-        background: $color-24;
+        &.alert-info {
+            background: $color-25;
 
-        &:before {
-          color: $color-14;
-          background: $color-24;
-          border-color: $color-16;
-        }
+            &::before {
+                border-color: $color-19;
+                background: $color-25;
+                color: $color-17;
+            }
 
-        p {
-          color: $color-2;
-        }
+            p {
+                color: $color-2;
+            }
 
-        a::after {
-          color: $color-14;
+            a::after {
+                color: $color-17;
+            }
         }
-      }
-    
-    &.alert-info{
-        background: $color-25;
-
-        &:before {
-          color: $color-17;
-          background: $color-25;
-          border-color: $color-19;
-        }
-
-        p {
-          color: $color-2;
-        }
-
-        a::after {
-          color: $color-17;
-        }
-      }
     }
 }
